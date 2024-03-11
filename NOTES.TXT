@@ -9,3 +9,7 @@
 04. Installing some extensions
 
 05. Creating server.js
+
+06. Creating folder config and in it creating config.js file
+
+07.
