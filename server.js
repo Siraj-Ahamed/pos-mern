@@ -3,9 +3,14 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const { bgCyan } = require("colors");
+const connectDb = require("./config/config.js");
 require("colors");
 // dotenv config
 dotenv.config();
+
+// db config
+connectDb();
 
 // rest object
 const app = express();
@@ -27,5 +32,5 @@ const PORT = process.env.PORT || 8070;
 
 // listen
 app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
+    console.log(`Server is listening on port ${PORT}`.bgCyan.white);
 });
