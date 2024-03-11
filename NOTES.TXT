@@ -1,0 +1,11 @@
+01. Creating package.json using "npm init -y"
+
+02. Installing modules
+1) npm i express mongoose morgan cors body-parser colors dotenv
+2) npm i --save-dev nodemon
+
+03. Creating folders --> routes, controllers, models, utils, middlewares
+
+04. Installing some extensions
+
+05. Creating server.js
