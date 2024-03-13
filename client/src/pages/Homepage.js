@@ -3,7 +3,9 @@ import DefaultLayout from '../components/DefaultLayout'
 
 const Homepage = () => {
   return (
-    <DefaultLayout />
+   <DefaultLayout>
+      <h1>Home Page</h1>
+   </DefaultLayout>
   )
 }
 
