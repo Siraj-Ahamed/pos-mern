@@ -6,19 +6,30 @@ import {
     LogoutOutlined,
     HomeOutlined,
     CopyOutlined,
-    UnorderedListOutlined 
+    UnorderedListOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import { Link } from "react-router-dom";
 const { Header, Sider, Content } = Layout;
-const DefaultLayout = ({children}) => {
+const DefaultLayout = ({ children }) => {
     const [collapsed, setCollapsed] = useState(false);
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
     return (
         <Layout style={{ minHeight: "100vh" }}>
-            <Sider trigger={null} collapsible collapsed={collapsed}>
+            <Sider
+                trigger={null}
+                collapsible
+                collapsed={collapsed}
+                style={{
+                    overflow: "auto",
+                    height: "100vh",
+                    position: "fixed",
+                    left: 0,
+                    
+                }}
+            >
                 {/* <div className="demo-logo-vertical" /> */}
                 <div className="logo">
                     <h1 className="text-center text-light font-weight-bold mt-4">
@@ -68,11 +79,18 @@ const DefaultLayout = ({children}) => {
                     </Menu.Item>
                 </Menu>
             </Sider>
-            <Layout>
+            <Layout
+                className="site-layout"
+                style={{ marginLeft: collapsed ? 80 : 200 }}
+            >
                 <Header
+                    className="site-layout-background"
                     style={{
                         padding: 0,
                         background: colorBgContainer,
+                        position: "fixed",
+                        zIndex: 1,
+                        width: "100%",
                     }}
                 >
                     <Button
@@ -93,12 +111,14 @@ const DefaultLayout = ({children}) => {
                     />
                 </Header>
                 <Content
+                 className="site-layout-background"
                     style={{
-                        margin: "24px 16px",
+                        // margin: "24px 16px",
                         padding: 24,
                         minHeight: 280,
                         background: colorBgContainer,
                         borderRadius: borderRadiusLG,
+                        marginTop: 64,
                     }}
                 >
                     {children}
