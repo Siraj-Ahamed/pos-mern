@@ -7,7 +7,7 @@ import {
     HomeOutlined,
     CopyOutlined,
     UnorderedListOutlined,
-    ShoppingCartOutlined
+    ShoppingCartOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import { Link } from "react-router-dom";
@@ -28,7 +28,6 @@ const DefaultLayout = ({ children }) => {
                     height: "100vh",
                     position: "fixed",
                     left: 0,
-                    
                 }}
             >
                 {/* <div className="demo-logo-vertical" /> */}
@@ -75,6 +74,11 @@ const DefaultLayout = ({ children }) => {
                         <Link to="/customers">Customers</Link>
                     </Menu.Item>
 
+                    {/* cart is here */}
+                    <Menu.Item key="/cart" icon={<ShoppingCartOutlined />}>
+                        <Link to="/cart">Cart 0</Link>
+                    </Menu.Item>
+
                     <Menu.Item key="/logout" icon={<LogoutOutlined />}>
                         <Link>Logout</Link>
                     </Menu.Item>
@@ -110,13 +114,13 @@ const DefaultLayout = ({ children }) => {
                             height: 64,
                         }}
                     />
-                    <div className="cart-item">
+                    {/* <div className="cart-item">
                         <p>0</p>
                           <ShoppingCartOutlined />
-                    </div>
+                    </div> */}
                 </Header>
                 <Content
-                 className="site-layout-background"
+                    className="site-layout-background"
                     style={{
                         // margin: "24px 16px",
                         padding: 24,
