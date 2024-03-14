@@ -7,6 +7,7 @@ import {
     HomeOutlined,
     CopyOutlined,
     UnorderedListOutlined,
+    ShoppingCartOutlined
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import { Link } from "react-router-dom";
@@ -109,6 +110,10 @@ const DefaultLayout = ({ children }) => {
                             height: 64,
                         }}
                     />
+                    <div className="cart-item">
+                        <p>0</p>
+                          <ShoppingCartOutlined />
+                    </div>
                 </Header>
                 <Content
                  className="site-layout-background"
