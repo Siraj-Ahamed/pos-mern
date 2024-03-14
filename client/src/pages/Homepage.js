@@ -26,7 +26,7 @@ const Homepage = () => {
             {/* <h1>Home Page</h1> */}
             <Row gutter={[16, 16]}>
                 {itemsData.map((item) => (
-                    <Col xs={24} sm={12} md={8} lg={6} xl={4} key={item.id} className="mb-4">
+                    <Col xs={24} sm={12} md={8} lg={6} key={item.id} className="mb-4">
                         <ItemList item={item} />
                     </Col>
                 ))}
